@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/btsegunda"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Segunda" />
+        <item
+            android:id="@+id/btterca"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Terça" />
+        <item
+            android:id="@+id/btquarta"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Quarta" />
+        <item
+            android:id="@+id/btquinta"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Quinta" />
+        <item
+            android:id="@+id/btsexta"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Sexta" />
+    </group>
+
+    <group android:checkableBehavior="single">
+       <item
+        android:title="Resumos" />
+        <item
+            android:id="@+id/btlistmaterias"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Lista de Matérias" />
+        <item
+            android:id="@+id/btlistfaltas"
+            android:title="Lista de Faltas"
+            android:icon="@android:drawable/ic_menu_info_details"
+            />
+        <item
+            android:id="@+id/btcadastromat"
+            android:title="Cadastro de Matérias"
+            android:icon="@android:drawable/ic_menu_save"
+            />
+        <item
+            android:id="@+id/bthorarios"
+            android:title="Cadastro de Horários"
+            android:icon="@android:drawable/ic_menu_save"
+            />
+
+    </group>
+
+
+
+
+
+
+</menu>

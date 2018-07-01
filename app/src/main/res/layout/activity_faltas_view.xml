@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.FaltasView">
+
+    <TextView
+        android:id="@+id/txtajuste3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="290dp"
+        android:text="Presenças:"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/txtajustepresenca"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="255dp"
+        android:layout_marginTop="280dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:visibility="gone" />
+
+    <RadioGroup
+        android:id="@+id/rescolherP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="330dp"
+        android:visibility="gone">
+
+        <RadioButton
+            android:id="@+id/rescolher1P"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Adicionar"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/rescolher2P"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Retirar"
+            android:visibility="gone" />
+    </RadioGroup>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btsalvarajustepresenca"
+        android:layout_width="59dp"
+        android:layout_height="51dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="420dp"
+        android:clickable="true"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+    <TextView
+        android:id="@+id/txtajuste1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="250dp"
+        android:text="Ajuste de Faltas e Presenças"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="115dp"
+        android:text="Presença: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtpresencaatual"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_gravity="start"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="115dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="115dp"
+        android:text="Faltas: "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtfaltasatuais"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_gravity="start"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="115dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:text="Matéria - Faltas"
+        android:textSize="35sp"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="70dp"
+        android:text="Matéria:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtnomeMatFaltas"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_gravity="start"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <ListView
+        android:id="@+id/listfaltas"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="250dp"
+        android:scrollbars="vertical"
+        android:textAlignment="center"
+        android:visibility="visible">
+
+
+    </ListView>
+
+    <ToggleButton
+        android:id="@+id/btajuste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="200dp"
+        android:text="Ajuste de faltas"
+        android:textOff="Ajuste On"
+        android:textOn="Ajuste Off"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txtajuste2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="290dp"
+        android:text="Faltas:"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/txtajustefaltas"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="280dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:visibility="gone" />
+
+    <RadioGroup
+        android:id="@+id/rescolhaF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="330dp"
+        android:visibility="gone">
+
+        <RadioButton
+            android:id="@+id/rescolha1F"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Adicionar"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/rescolha2F"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Retirar"
+            android:visibility="gone" />
+    </RadioGroup>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btsalvarajustefaltas"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="420dp"
+        android:clickable="true"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="160dp"
+        android:text="% de Frequência Atual:"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtfrequencia"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="160dp" />
+
+</FrameLayout>

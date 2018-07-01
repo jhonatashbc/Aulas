@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_segunda"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Segunda" />
+    <item
+        android:id="@+id/action_terca"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Terça" />
+    <item
+        android:id="@+id/action_quarta"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Quarta" />
+    <item
+        android:id="@+id/action_quinta"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Quinta" />
+    <item
+        android:id="@+id/action_sexta"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Sexta" ></item>
+</menu>
