@@ -28,6 +28,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import org.threeten.bp.*;
 
 import com.example.jhonatashenrique.aulas.DAO.CheckInAulaDAO;
 import com.example.jhonatashenrique.aulas.DAO.FaltasDAO;
@@ -62,7 +63,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.Instant;
-import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -551,21 +551,32 @@ public class Principal extends AppCompatActivity
             int minuto = cal.get(Calendar.MINUTE);
             Horario horario2 = daoHorario.buscarHorario();
 
-            LocalTime aula1 = null;
-            LocalTime aula2 = null;
-            LocalTime aula3 = null;
-            LocalTime aula4 = null;
-            LocalTime aula5 = null;
-            LocalTime aula6 = null;
+            org.threeten.bp.LocalTime aula1 = null;
+            org.threeten.bp.LocalTime aula2 = null;
+            org.threeten.bp.LocalTime aula3 = null;
+            org.threeten.bp.LocalTime aula4 = null;
+            org.threeten.bp.LocalTime aula5 = null;
+            org.threeten.bp.LocalTime aula6 = null;
 
             if (horario2.getId() == 1) {
-
-                aula1 = LocalTime.parse(horario2.getHorario1());
-                aula2 = LocalTime.parse(horario2.getHorario2());
-                aula3 = LocalTime.parse(horario2.getHorario3());
-                aula4 = LocalTime.parse(horario2.getHorario4());
-                aula5 = LocalTime.parse(horario2.getHorario5());
-                aula6 = LocalTime.parse(horario2.getHorario6());
+                if (!horario2.getHorario1().equals("")) {
+                    aula1 = org.threeten.bp.LocalTime.parse(horario2.getHorario1());
+                }
+                if (!horario2.getHorario2().equals("")) {
+                    aula2 = org.threeten.bp.LocalTime.parse(horario2.getHorario2());
+                }
+                if (!horario2.getHorario3().equals("")) {
+                    aula3 = org.threeten.bp.LocalTime.parse(horario2.getHorario3());
+                }
+                if (!horario2.getHorario4().equals("")) {
+                    aula4 = org.threeten.bp.LocalTime.parse(horario2.getHorario4());
+                }
+                if (!horario2.getHorario5().equals("")) {
+                    aula5 = org.threeten.bp.LocalTime.parse(horario2.getHorario5());
+                }
+                if (!horario2.getHorario6().equals("")) {
+                    aula6 = org.threeten.bp.LocalTime.parse(horario2.getHorario6());
+                }
 
 
             }
@@ -575,7 +586,7 @@ public class Principal extends AppCompatActivity
             } else {
                 checkInAula = daoCheckInAula.buscarCheckInAula();
 
-                LocalTime horaatual = LocalTime.of(hora,minuto);
+                org.threeten.bp.LocalTime horaatual = org.threeten.bp.LocalTime.of(hora,minuto);
 
                 if (horaatual.isAfter(aula1) && horaatual.isBefore(aula1.plusHours(4))) {
                     if (checkInAula.getCheckaula1() != 1) {
@@ -584,36 +595,47 @@ public class Principal extends AppCompatActivity
                         btfaltastodas.setVisibility(View.VISIBLE);
                     }
                 }
-                if (horaatual.isAfter(aula2) && horaatual.isBefore(aula2.plusHours(3))) {
-                    if (checkInAula.getCheckaula2() != 1) {
-                        btpresencaaula2.setVisibility(View.VISIBLE);
-                        btfaltaaula2.setVisibility(View.VISIBLE);
+                if (aula2 != null) {
+                    if (horaatual.isAfter(aula2) && horaatual.isBefore(aula2.plusHours(3))) {
+                        if (checkInAula.getCheckaula2() != 1) {
+                            btpresencaaula2.setVisibility(View.VISIBLE);
+                            btfaltaaula2.setVisibility(View.VISIBLE);
+                        }
                     }
                 }
-                if (horaatual.isAfter(aula3) && horaatual.isBefore(aula3.plusHours(2))) {
-                    if (checkInAula.getCheckaula3() != 1) {
-                        btpresencaaula3.setVisibility(View.VISIBLE);
-                        btfaltaaula3.setVisibility(View.VISIBLE);
+                if (aula3 != null) {
+                    if (horaatual.isAfter(aula3) && horaatual.isBefore(aula3.plusHours(2))) {
+                        if (checkInAula.getCheckaula3() != 1) {
+                            btpresencaaula3.setVisibility(View.VISIBLE);
+                            btfaltaaula3.setVisibility(View.VISIBLE);
+                        }
                     }
                 }
-                if (horaatual.isAfter(aula4) && horaatual.isBefore(aula4.plusHours(1))) {
-                    if (checkInAula.getCheckaula4() != 1) {
-                        btpresencaaula4.setVisibility(View.VISIBLE);
-                        btfaltaaula4.setVisibility(View.VISIBLE);
+                if (aula4 != null) {
+                    if (horaatual.isAfter(aula4) && horaatual.isBefore(aula4.plusHours(1))) {
+                        if (checkInAula.getCheckaula4() != 1) {
+                            btpresencaaula4.setVisibility(View.VISIBLE);
+                            btfaltaaula4.setVisibility(View.VISIBLE);
+                        }
                     }
                 }
-                if (horaatual.isAfter(aula5) && horaatual.isBefore(aula5.plusHours(1))) {
-                    if (checkInAula.getCheckaula5() != 1) {
-                        btpresencaaula5.setVisibility(View.VISIBLE);
-                        btfaltaaula5.setVisibility(View.VISIBLE);
+                if (aula5 != null) {
+                    if (horaatual.isAfter(aula5) && horaatual.isBefore(aula5.plusHours(1))) {
+                        if (checkInAula.getCheckaula5() != 1) {
+                            btpresencaaula5.setVisibility(View.VISIBLE);
+                            btfaltaaula5.setVisibility(View.VISIBLE);
+                        }
                     }
                 }
-                if (horaatual.isAfter(aula6) && horaatual.isBefore(aula6.plusHours(1))) {
-                    if (checkInAula.getCheckaula6() != 1) {
-                        btpresencaaula6.setVisibility(View.VISIBLE);
-                        btfaltaaula6.setVisibility(View.VISIBLE);
+                if (aula6 != null){
+                    if (horaatual.isAfter(aula6) && horaatual.isBefore(aula6.plusHours(1))) {
+                        if (checkInAula.getCheckaula6() != 1) {
+                            btpresencaaula6.setVisibility(View.VISIBLE);
+                            btfaltaaula6.setVisibility(View.VISIBLE);
+                        }
                     }
                 }
+
                 if(horaatual.isAfter(aula1.plusHours(5))) {
 
                     checkInAula.setCheckaula1(0);

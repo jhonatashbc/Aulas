@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
+import org.threeten.bp.*;
 
 import com.example.jhonatashenrique.aulas.DAO.HorarioDAO;
 import com.example.jhonatashenrique.aulas.DAO.MateriaDAO;
@@ -30,7 +31,6 @@ import com.example.jhonatashenrique.aulas.Domain.Segunda;
 import com.example.jhonatashenrique.aulas.Domain.Sexta;
 import com.example.jhonatashenrique.aulas.Domain.Terca;
 
-import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -79,12 +79,24 @@ public class NewAppWidget extends AppWidgetProvider {
         LocalTime aula5 = null;
         LocalTime aula6 = null;
 
-        aula1 = LocalTime.parse(horario.getHorario1());
-        aula2 = LocalTime.parse(horario.getHorario2());
-        aula3 = LocalTime.parse(horario.getHorario3());
-        aula4 = LocalTime.parse(horario.getHorario4());
-        aula5 = LocalTime.parse(horario.getHorario5());
-        aula6 = LocalTime.parse(horario.getHorario6());
+        if (!horario.getHorario1().equals("")) {
+            aula1 = LocalTime.parse(horario.getHorario1());
+        }
+        if (!horario.getHorario2().equals("")) {
+            aula2 = LocalTime.parse(horario.getHorario2());
+        }
+        if (!horario.getHorario3().equals("")) {
+            aula3 = LocalTime.parse(horario.getHorario3());
+        }
+        if (!horario.getHorario4().equals("")) {
+            aula4 = LocalTime.parse(horario.getHorario4());
+        }
+        if (!horario.getHorario5().equals("")) {
+            aula5 = LocalTime.parse(horario.getHorario5());
+        }
+        if (!horario.getHorario6().equals("")) {
+            aula6 = LocalTime.parse(horario.getHorario6());
+        }
 
         LocalTime horaatual = LocalTime.of(hora,minuto);;
 
@@ -104,9 +116,12 @@ public class NewAppWidget extends AppWidgetProvider {
                 if (horaatual.isAfter(aula5) && horaatual.isBefore(aula6)) {
                     CriarNotificacao(context);
                 }
-                if (horaatual.isAfter(aula6) && horaatual.isBefore(aula6.plusMinutes(50))) {
-                    CriarNotificacao(context);
+                if (aula6 != null){
+                    if (horaatual.isAfter(aula6) && horaatual.isBefore(aula6.plusMinutes(50))) {
+                        CriarNotificacao(context);
+                    }
                 }
+
 
         }
 
